@@ -106,12 +106,16 @@ body {
     font-family: "Dancing Script", cursive;
 }
 
+#letter.open p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 #mail.open #letter {
     transform: translate(-50%, -80px);
     transition: 0.5s;
     z-index: 4;
-    opacity: 1;
-    transform: translateY(0);
+
 }
 
 #mail.open #opmail {
