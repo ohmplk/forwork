@@ -6,6 +6,17 @@ const music = document.getElementById("bgMusic");
 
 music.volume = 0.4;
 
+#mail.open #letter {
+    transform: translate(-50%, -80px);
+    transition: 0.5s;
+    z-index: 4;
+}
+
+#mail.open #opmail {
+    transform: rotateX(180deg);
+}
+
+
 letter.addEventListener("click", () => {
 
     letter.classList.toggle("open");
