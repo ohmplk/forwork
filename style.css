@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: pink;
+}
+
+#mail {
+    width: 90%;
+    max-width: 700px;
+    height: 350px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 250px;
+    box-shadow: 5px 5px 5px rgba(46, 46, 46, 0.507);
+    position: relative;
+    cursor: pointer;
+}
+
+#opmail {
+    width: 700px;
+    height: 0;
+    border-left: 350px solid transparent;
+    border-right: 350px solid transparent;
+    border-top: 200px solid #f5f5f5;
+
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.3));
+    position: relative;
+    z-index: 4;
+}
+
+#bottom-fold {
+    width: 0;
+    height: 0;
+    border-left: 350px solid transparent;
+    border-right: 350px solid transparent;
+    border-bottom: 200px solid #f0f0f0;
+    margin-top: -50px;
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.3));
+
+    position: relative;
+    z-index: 2;
+}
+
+#left-fold {
+    width: 0;
+    height: 0;
+    border-top: 175px solid transparent;
+    border-bottom: 175px solid transparent;
+    border-left: 350px solid #f0f0f0;
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.3));
+
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+}
+
+#right-fold {
+    width: 0;
+    height: 0;
+    border-top: 175px solid transparent;
+    border-bottom: 175px solid transparent;
+    border-right: 350px solid #f0f0f0;
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.3));
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 3;
+}
+
+#letter {
+    width: 600px;
+    height: 200px;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 70px;
+    padding: 75px;
+    font-family: "Dancing Script", cursive;
+    z-index: 1;
+}
+
+#letter h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+#letter p {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+    font-family: "Dancing Script", cursive;
+}
+
+#mail:hover #letter,
+#mail:active #letter {
+    transform: translate(-50%, -80px);
+    transition: 0.5s;
+    z-index: 4;
+}
+
+#opmail {
+    transform-origin: top;
+    transition: 0.5s;
+}
+
+#mail:hover #opmail,
+#mail:active #opmail {
+    transform: rotateX(180deg);
+}
+
+#left-fold,
+#right-fold {
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.15));
+}
+
+#letter.open {
+    width: 700px;
+    max-width: 90vw;
+
+    height: 550px;
+    max-height: 80vh;
+
+    top: 0%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    z-index: 999;
+
+    pointer-events: auto;
+    overflow: auto;
+    text-align: center;
+    padding: 50px 60px;
+}
+
+#mail:has(#letter.open):hover #opmail{
+transform:none;
+}
+
+#letter.open {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+#letter p{
+opacity:0;
+transition:0.5s;
+}
+
+.birthday-img{
+width:220px;
+margin:20px auto;
+display:block;
+border-radius:10px;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+cursor:pointer;
+
+transition: transform 0.4s ease;
+transform-origin:center;
+}
+
+.birthday-img.zoom{
+    transform: translateY(0) scale(2);
+    z-index:1000;
+}
+
+#letter img {
+    opacity: 0;
+    transform: translateY(20px) scale(1);
+    transition: 0.6s;
+}
+
+#letter.open img {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition-delay: 0.5s;
+}
