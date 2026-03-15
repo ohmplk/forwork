@@ -103,20 +103,13 @@ body {
     font-family: "Dancing Script", cursive;
 }
 
-#mail:hover #letter,
-#mail:active #letter {
+#mail.open #letter {
     transform: translate(-50%, -80px);
     transition: 0.5s;
     z-index: 4;
 }
 
-#opmail {
-    transform-origin: top;
-    transition: 0.5s;
-}
-
-#mail:hover #opmail,
-#mail:active #opmail {
+#mail.open #opmail {
     transform: rotateX(180deg);
 }
 
