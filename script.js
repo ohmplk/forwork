@@ -3,6 +3,14 @@
 const openSound = document.getElementById("openSound");
 const letter = document.getElementById("letter");
 const music = document.getElementById("bgMusic");
+const mail = document.getElementById("mail");
+
+mail.addEventListener("click", () => {
+
+    mail.classList.add("open");
+    letter.classList.add("open");
+
+});
 
 music.volume = 0.4;
 
