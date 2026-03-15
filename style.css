@@ -137,10 +137,6 @@ body {
     padding: 50px 60px;
 }
 
-#mail:has(#letter.open):hover #opmail{
-transform:none;
-}
-
 #letter.open {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
